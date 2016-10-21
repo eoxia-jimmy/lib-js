@@ -18,7 +18,7 @@ La réponse de la requête doit contenir au minimum le json suivant:
 }
 ```
 
-- callback_module: le nom du dossier du module
+- callback_module: le nom de l'objet après window.app.*
 - callback_success: la fonction dans le fichier JavaScript du module y lors du "success": **true**
 - callback_error: la fonction dans le fichier JavaScript du module y lors du "success": **false**
 
