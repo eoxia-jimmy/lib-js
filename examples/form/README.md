@@ -8,6 +8,11 @@ La réponse de la requête doit contenir au minimum le json suivant:
 ```json
 {
 	"success": true|false
+	"data (facultative)": {
+		"callback_module (facultative)": "mon_module",
+		"callback_success (facultative)": "callback_success",
+		"callback_error (facultative)": "callback_error"
+	}
 }
 ```
 
