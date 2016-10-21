@@ -1,6 +1,6 @@
 # Formulaire Ajax
 
-Toutes les extensions de vos fichiers js doivent être comme suit ** *.app.js**
+Toutes les extensions de vos fichiers js doivent être comme suit __*.app.js**__
 
 ## Description
 
