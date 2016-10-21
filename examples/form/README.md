@@ -7,7 +7,7 @@ Tous les input dans un formulaires seront envoyés en AJAX à **condition** d'av
 La réponse de la requête doit contenir au minimum le json suivant:
 ```json
 {
-	"success": true|false
+	"success": true,
 	"data (facultative)": {
 		"callback_module (facultative)": "mon_module",
 		"callback_success (facultative)": "callback_success",
@@ -16,6 +16,11 @@ La réponse de la requête doit contenir au minimum le json suivant:
 }
 ```
 
+- callback_module: le nom du dossier du module
+- callback_success: la fonction dans le fichier JavaScript du module y lors du "success": true
+- callback_error: la fonction dans le fichier JavaScript du module y lors du "success": false
+
+Voir exemple ci-dessous.
 
 # Code
 
