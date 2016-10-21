@@ -10,7 +10,7 @@ var glob 		= require("glob");
 var uglify 	= require('gulp-uglify');
 
 var paths = {
-	all_js: ['../lib/init.js', '../**/*.lib.js']
+	all_js: ['../lib/init.js', '../**/*.lib.js', '../**/*.app.js']
 };
 
 gulp.task('js', function() {

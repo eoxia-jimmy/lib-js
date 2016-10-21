@@ -1,5 +1,7 @@
 # Formulaire Ajax
 
+Toutes les extensions de vos fichiers js doivent être comme suit ** *.app.js**
+
 ## Description
 
 Tous les input dans un formulaires seront envoyés en AJAX à **condition** d'avoir un bouton avec la class "submit-form".
@@ -46,20 +48,30 @@ Le fichier saveData.php, gère le traitement PHP (Enregistrement BDD, ect), ains
 ```php
 <?php
 
-echo json_encode( array( 'success' => true, 'data' => array( 'callback_module' => 'display', 'callback_success' => 'display_title', 'title' => $_POST['title'] ) ) ); // Faille de sécurité; On s'en fou, mais à ne pas faire!
-die();
+echo json_encode( array(
+	'success' => true,
+	'data' => array(
+		'module' => 'example_form', // Doit être renommé en object
+		'callback_success' => 'display_title', // Doir être renommé en success
+		'title' => $_POST['title']  // Faille de sécurité; On s'en fou, mais à ne pas faire!
+	)
+) );
 
 ?>
+
 ```
 
 ## JS
 
-Le fichier exemple.js
+Le fichier exemple.app.js
 
 ```js
-window.app.display.display_title = function( element, response ) {
+window.app.example_form = {};
 
+window.app.example_form.display_title = function( element, response ) {
+	alert( response.data.title );
 }
+
 ```
 
 # Task lists
@@ -68,3 +80,4 @@ window.app.display.display_title = function( element, response ) {
 - [x] Gestion de la réponse
 - [ ] Gestion des erreurs
 - [ ] Gestion du loader
+- [ ] Renommer les données de réponse de la requête
