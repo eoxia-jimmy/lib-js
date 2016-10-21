@@ -2,7 +2,14 @@
 
 ## Description
 
-Envoie de la requête: Tous les input dans un formulaires seront envoyés en AJAX à **condition** d'avoir un bouton avec la class "submit-form".
+Tous les input dans un formulaires seront envoyés en AJAX à **condition** d'avoir un bouton avec la class "submit-form".
+
+La réponse de la requête doit contenir au minimum le json suivant:
+```json
+{
+	"success": true|false
+}
+```
 
 
 # Code
