@@ -1,6 +1,6 @@
 # Formulaire Ajax
 
-# Description
+## Description
 
 Envoie de la requête: Tous les input dans un formulaires seront envoyés en AJAX à **condition** d'avoir un bouton avec la class "submit-form".
 
