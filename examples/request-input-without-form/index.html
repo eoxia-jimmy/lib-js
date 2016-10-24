@@ -2,21 +2,23 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Examples: Requête avec les input</title>
+	<title>Examples: Requête avec les inputs sans formulaire</title>
 </head>
 <body>
 
-	<h2>Examples: Requête avec formulaire</h2>
-	<form action="/lib-js/admin-ajax.php" method="POST">
-		<input type="hidden" name="action" value="request_with_form" />
+	<h2>Examples: Requête avec les inputs sans formulaire </h2>
+
+	<ul class="parent">
+		<input type="hidden" name="action" value="request_input_without_form" />
 		<label>
 			<span>Titre</span>
 			<input type="text" name="title" value="Mon super titre" />
 		</label>
 
-		<input type="submit" class="submit-form" />
-	</form>
+		<input data-parent="parent" type="submit" class="action-input" />
+	</ul>
 
+	<script>window.ajaxurl = "/lib-js/admin-ajax.php";</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="../../external/jquery.form.min.js"></script>
 	<script src="../../lib.min.js"></script>
