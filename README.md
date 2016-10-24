@@ -12,17 +12,14 @@ Elle permet la gestion des:
 	- avec les inputs (sans formulaire)
 	- suppression
 - tableaux de donnée (Ajouter, Editer, Supprimer)
+- erreurs
 - chargement
-- popup
-- toggle
 
 ## Exemples
 - Requêtes avec les attributes d'une balise (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/request-attribute/)
 - Requêtes avec un formulaire (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/request-with-form/)
 - Requêtes avec les inputs sans formulaire (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/request-input-without-form/)
 - Requêtes suppression
-- Les popups
-- Les toggles
 
 # Task lists
 
