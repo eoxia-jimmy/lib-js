@@ -2,9 +2,15 @@
 
 Toutes les extensions de vos fichiers js doivent être comme suit __*.app.js**__
 
+## Important
+
+- Tous les attributs envoyés par cette requête doivent commencer par "data-", ex: "data-id", lors de l'éxécution du script de la lib, "data-id" deviendra "id" (sans le data)
+- L'attribut "data-nonce" est automatiquement converti en "_wpnonce"
+- L'attribut passe en état "disabled" lors du clique sur celui-ci
+
 ## Description
 
-Tous les input dans un formulaires seront envoyés en AJAX à **condition** d'avoir un bouton avec la class "submit-form".
+Tous les attributs dans la balise voulu seront envoyés en AJAX à **condition** d'avoir la class "action-attribute".
 
 La réponse de la requête doit contenir au minimum le json suivant:
 ```json
@@ -31,34 +37,25 @@ Voir exemple ci-dessous.
 Le formulaire avec le input submit contenant la classe "submit-form", **sans ça**, le formulaire ne marche pas.
 
 ```html
-<form action="saveData.php" method="POST">
-	<label>
-		<span>Titre</span>
-		<input type="text" name="title" value="Mon super titre" />
-	</label>
-
-	<input type="submit" class="submit-form" />
-</form>
+<button class="action-attribute" data-id="10" data-nonce="JIOFJAZIOFJO">Clique moi!</button>
 ```
 
 ## PHP
 
-Le fichier saveData.php, gère le traitement PHP (Enregistrement BDD, ect), ainsi que le retour de la requête en JSON.
+Le fichier handle.php, gère le traitement PHP (Enregistrement BDD, ect), ainsi que le retour de la requête en JSON.
 
 ```php
 <?php
 
 echo json_encode( array(
-	'success' => true,
-	'data' => array(
-		'module' => 'example_form', // Doit être renommé en object
-		'callback_success' => 'display_title', // Doir être renommé en success
-		'title' => $_POST['title']  // Faille de sécurité; On s'en fou, mais à ne pas faire!
-	)
+    'success' => true,
+    'data' => array(
+        'module' => 'example_form', // Doit être renommé en object
+        'callback_success' => 'delete_button' // Doir être renommé en success
+    )
 ) );
 
 ?>
-
 ```
 
 ## JS
@@ -68,8 +65,8 @@ Le fichier exemple.app.js
 ```js
 window.app.example_form = {};
 
-window.app.example_form.display_title = function( element, response ) {
-	alert( response.data.title );
+window.app.example_form.delete_button = function( element, response ) {
+  jQuery( element ).remove();
 }
 
 ```
@@ -80,4 +77,3 @@ window.app.example_form.display_title = function( element, response ) {
 - [x] Gestion de la réponse
 - [ ] Gestion des erreurs
 - [ ] Gestion du loader
-- [ ] Renommer les données de réponse de la requête

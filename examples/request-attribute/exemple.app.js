@@ -1,5 +1,5 @@
 window.app.example_form = {};
 
-window.app.example_form.display_title = function( element, response ) {
-    alert( response.data.title );
+window.app.example_form.delete_button = function( element, response ) {
+  jQuery( element ).remove();
 }
