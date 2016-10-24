@@ -37,7 +37,11 @@ Voir exemple ci-dessous.
 Le formulaire avec le input submit contenant la classe "submit-form", **sans ça**, le formulaire ne marche pas.
 
 ```html
-<button class="action-attribute" data-id="10" data-nonce="JIOFJAZIOFJO">Clique moi!</button>
+<ul>
+	<li>Titre</li>
+	<li>Mon super post</li>
+	<li><a class="action-delete" data-action="request_delete" href="#">Supprimer</a></li>
+</ul>
 ```
 
 ## PHP
@@ -46,16 +50,17 @@ Le fichier handle.php, gère le traitement PHP (Enregistrement BDD, ect), ainsi 
 
 ```php
 <?php
-
-echo json_encode( array(
-    'success' => true,
-    'data' => array(
-        'module' => 'example_form', // Doit être renommé en object
-        'callback_success' => 'delete_button' // Doir être renommé en success
-    )
-) );
-
+function request_delete() {
+	echo json_encode( array(
+		'success' => true,
+		'data' => array(
+			'module' => 'request_delete', // Doit être renommé en object
+			'callback_success' => 'delete_line' // Doir être renommé en success
+		)
+	) );
+}
 ?>
+
 ```
 
 ## JS
@@ -63,11 +68,11 @@ echo json_encode( array(
 Le fichier exemple.app.js
 
 ```js
-window.app.request_attribute = {};
+window.app.request_delete = {};
 
-window.app.request_attribute.delete_button = function( element, response ) {
-  jQuery( element ).remove();
-}
+window.app.request_delete.delete_line = function( element, response ) {
+  jQuery( element ).closest( 'ul' ).remove();
+};
 ```
 
 # Task lists

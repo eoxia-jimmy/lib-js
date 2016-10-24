@@ -31,14 +31,15 @@ Voir exemple ci-dessous.
 Le formulaire avec le input submit contenant la classe "submit-form", **sans ça**, le formulaire ne marche pas.
 
 ```html
-<form action="saveData.php" method="POST">
+<ul class="parent">
+	<input type="hidden" name="action" value="request_input_without_form" />
 	<label>
 		<span>Titre</span>
 		<input type="text" name="title" value="Mon super titre" />
 	</label>
 
-	<input type="submit" class="submit-form" />
-</form>
+	<input data-parent="parent" type="submit" class="action-input" />
+</ul>
 ```
 
 ## PHP
@@ -48,17 +49,18 @@ Le fichier saveData.php, gère le traitement PHP (Enregistrement BDD, ect), ains
 ```php
 <?php
 
-echo json_encode( array(
-	'success' => true,
-	'data' => array(
-		'module' => 'example_form', // Doit être renommé en object
-		'callback_success' => 'display_title', // Doir être renommé en success
-		'title' => $_POST['title']  // Faille de sécurité; On s'en fou, mais à ne pas faire!
-	)
-) );
+function request_input_without_form() {
+	echo json_encode( array(
+		'success' => true,
+		'data' => array(
+			'module' => 'request_input_without_form', // Doit être renommé en object
+			'callback_success' => 'display_title', // Doir être renommé en success
+			'title' => $_POST['title']  // Faille de sécurité; On s'en fou, mais à ne pas faire!
+		)
+	) );
+}
 
 ?>
-
 ```
 
 ## JS
@@ -66,10 +68,10 @@ echo json_encode( array(
 Le fichier exemple.app.js
 
 ```js
-window.app.example_form = {};
+window.app.request_input_without_form = {};
 
-window.app.example_form.display_title = function( element, response ) {
-	alert( response.data.title );
+window.app.request_input_without_form.display_title = function( element, response ) {
+    alert( response.data.title );
 }
 
 ```
