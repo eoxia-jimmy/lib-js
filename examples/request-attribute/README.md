@@ -42,7 +42,7 @@ Le formulaire avec le input submit contenant la classe "submit-form", **sans ça
 
 ## PHP
 
-Le fichier handle.php, gère le traitement PHP (Enregistrement BDD, ect), ainsi que le retour de la requête en JSON.
+Gère le traitement PHP (Enregistrement BDD, ect), ainsi que le retour de la requête en JSON.
 
 ```php
 <?php
@@ -51,7 +51,7 @@ echo json_encode( array(
     'success' => true,
     'data' => array(
         'module' => 'example_form', // Doit être renommé en object
-        'callback_success' => 'delete_button' // Doir être renommé en success
+        'callback_success' => 'delete_button' // Doit être renommé en success
     )
 ) );
 
@@ -68,11 +68,3 @@ window.app.request_attribute = {};
 window.app.request_attribute.delete_button = function( element, response ) {
   jQuery( element ).remove();
 }
-```
-
-# Task lists
-
-- [x] Gestion de l'envoie de la requête
-- [x] Gestion de la réponse
-- [ ] Gestion des erreurs
-- [ ] Gestion du loader

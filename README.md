@@ -7,7 +7,7 @@ Toutes les extensions de vos fichiers js doivent être comme suit __*.app.js**__
 Cette lib permet d'éviter de retaper toujours les mêmes lignes de code.
 Elle permet la gestion des:
 - requêtes
-	- avec les attibuts d'une balise
+	- avec les attributs d'une balise
 	- avec un formulaire
 	- avec les inputs (sans formulaire)
 	- suppression
