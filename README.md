@@ -20,7 +20,7 @@ Elle permet la gestion des:
 
 ## Exemples
 - Requêtes avec les attributes d'une balise (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/request-attribute/)
-- Requêtes avec un formulaire (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/request-input-no-form/)
+- Requêtes avec un formulaire (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/request-with-form/)
 - Requêtes avec les inputs (sans formulaire)
 - Requêtes suppression
 - Tableaux de donnée (Ajouter, Editer, Supprimer)
