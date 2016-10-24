@@ -8,8 +8,12 @@
 
 	<h2>Examples: Requête avec les attributs dans une balise html</h2>
 
-	<button class="action-attribute" data-id="10" data-nonce="JIOFJAZIOFJO">Clique moi!</button>
+	<button class="action-attribute"
+					data-action="request_attribute"
+					data-id="10"
+					data-nonce="JIOFJAZIOFJO">Clique moi!</button>
 
+	<script>window.ajaxurl = "/lib-js/admin-ajax.php";</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="../../lib.min.js"></script>
 </body>

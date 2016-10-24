@@ -1,5 +1,5 @@
-window.app.example_form = {};
+window.app.request_attribute = {};
 
-window.app.example_form.delete_button = function( element, response ) {
+window.app.request_attribute.delete_button = function( element, response ) {
   jQuery( element ).remove();
 }
