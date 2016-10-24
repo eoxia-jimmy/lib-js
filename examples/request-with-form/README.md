@@ -31,7 +31,8 @@ Voir exemple ci-dessous.
 Le formulaire avec le input submit contenant la classe "submit-form", **sans ça**, le formulaire ne marche pas.
 
 ```html
-<form action="saveData.php" method="POST">
+<form action="/lib-js/admin-ajax.php" method="POST">
+	<input type="hidden" name="action" value="request_with_form" />
 	<label>
 		<span>Titre</span>
 		<input type="text" name="title" value="Mon super titre" />
@@ -48,14 +49,16 @@ Gère le traitement PHP (Enregistrement BDD, ect), ainsi que le retour de la req
 ```php
 <?php
 
-echo json_encode( array(
-	'success' => true,
-	'data' => array(
-		'module' => 'example_form', // Doit être renommé en object
-		'callback_success' => 'display_title', // Doir être renommé en success
-		'title' => $_POST['title']  // Faille de sécurité; On s'en fou, mais à ne pas faire!
-	)
-) );
+function request_with_form() {
+	echo json_encode( array(
+		'success' => true,
+		'data' => array(
+			'module' => 'request_with_form', // Doit être renommé en object
+			'callback_success' => 'display_title', // Doir être renommé en success
+			'title' => $_POST['title']  // Faille de sécurité; On s'en fou, mais à ne pas faire!
+		)
+	) );
+}
 
 ?>
 
@@ -66,10 +69,10 @@ echo json_encode( array(
 Le fichier exemple.app.js
 
 ```js
-window.app.example_form = {};
+window.app.request_with_form = {};
 
-window.app.example_form.display_title = function( element, response ) {
-	alert( response.data.title );
+window.app.request_with_form.display_title = function( element, response ) {
+    alert( response.data.title );
 }
 
 ```
