@@ -4,9 +4,9 @@ Toutes les extensions de vos fichiers js doivent être comme suit __*.app.js**__
 
 ## Important
 
-- Tous les attributs envoyés par cette requête doivent commencer par "data-", ex: "data-id", lors de l'éxécution du script de la lib, "data-id" deviendra "id" (sans le data)
-- L'attribut "data-nonce" est automatiquement converti en "_wpnonce"
-- L'attribut passe en état "disabled" lors du clique sur celui-ci
+- Tous les attributs envoyés par cette requête doivent commencer par "data-", ex: **"data-id"**, lors de l'éxécution du script de la lib, "data-id" deviendra **"id"** (sans le data)
+- L'attribut "data-nonce" est **automatiquement** converti en "_wpnonce"
+- La balise HTML passe en état **"disabled"** lors du clique sur celui-ci
 
 ## Description
 
@@ -63,12 +63,11 @@ echo json_encode( array(
 Le fichier exemple.app.js
 
 ```js
-window.app.example_form = {};
+window.app.request_attribute = {};
 
-window.app.example_form.delete_button = function( element, response ) {
+window.app.request_attribute.delete_button = function( element, response ) {
   jQuery( element ).remove();
 }
-
 ```
 
 # Task lists
