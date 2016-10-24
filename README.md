@@ -19,10 +19,10 @@ Elle permet la gestion des:
 - toggle
 
 ## Exemples
-- Requêtes avec les attributes d'une balise
-- Requêtes avec un formulaire
+- Requêtes avec les attributes d'une balise ()
+- Requêtes avec un formulaire (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/form)
 - Requêtes avec les inputs (sans formulaire)
-- Requêtes suppresion
+- Requêtes suppression
 - Tableaux de donnée (Ajouter, Editer, Supprimer)
 - Gestion des erreurs
 - Les popups
