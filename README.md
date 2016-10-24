@@ -11,10 +11,8 @@ Elle permet la gestion des:
 	- avec un formulaire
 	- avec les inputs (sans formulaire)
 	- suppression
-	- callback personnalisé des réponses
 - tableaux de donnée (Ajouter, Editer, Supprimer)
 - chargement
-- erreur
 - popup
 - toggle
 
@@ -23,8 +21,6 @@ Elle permet la gestion des:
 - Requêtes avec un formulaire (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/request-with-form/)
 - Requêtes avec les inputs sans formulaire (https://github.com/eoxia-jimmy/lib-js/tree/master/examples/request-input-without-form/)
 - Requêtes suppression
-- Tableaux de donnée (Ajouter, Editer, Supprimer)
-- Gestion des erreurs
 - Les popups
 - Les toggles
 
