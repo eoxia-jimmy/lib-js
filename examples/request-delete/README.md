@@ -46,7 +46,7 @@ Le formulaire avec le input submit contenant la classe "submit-form", **sans ça
 
 ## PHP
 
-Le fichier handle.php, gère le traitement PHP (Enregistrement BDD, ect), ainsi que le retour de la requête en JSON.
+Gère le traitement PHP (Enregistrement BDD, ect), ainsi que le retour de la requête en JSON.
 
 ```php
 <?php
